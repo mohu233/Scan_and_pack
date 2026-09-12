@@ -1,0 +1,44 @@
+# Qt build directories and generated files
+build/
+debug/
+release/
+*.o
+*.obj
+*.moc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Makefile
+Makefile.*
+*.qm
+*.stash
+
+# Qt Creator user-specific settings
+.qtcreator/
+*.pro.user
+*.pro.user.*
+*.autosave
+
+# Packaged binaries and deployed Qt runtime
+package/app/
+package/*.exe
+*.dll
+*.pdb
+
+# Runtime/private data (created under the user's temporary directory)
+token.txt
+fnsku_sku_index.xlsx
+raw_response.txt
+
+# Locally generated business files
+装箱单_*.xlsx
+装箱计划*.xlsx
+packing-list_*.xlsx
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
