@@ -1,0 +1,11 @@
+TARGET = ProfilePowerProxyTests
+QT += widgets network testlib
+CONFIG += c++17 console testcase
+CONFIG -= app_bundle
+DEFINES += PROFILEPOWER_PROXY_TESTS
+INCLUDEPATH += ..
+SOURCES += proxy_tests.cpp ../envmanager.cpp ../mainwindow.cpp ../proxy_manager.cpp ../profile_runtime.cpp ../proxy_config.cpp ../proxy_workflow.cpp ../wireguard_proxy.cpp ../browser_proxy_badge.cpp ../proxy_exit_ip.cpp ../environment_ip.cpp ../ui_appearance.cpp
+HEADERS += ../mainwindow.h ../envmanager.h ../profile_runtime.h ../proxy_config.h ../wireguard_proxy.h ../browser_proxy_badge.h ../proxy_exit_ip.h
+FORMS += ../mainwindow.ui
+RESOURCES += ../profilepower_resources.qrc
+win32:LIBS += -lversion -luser32 -lgdi32

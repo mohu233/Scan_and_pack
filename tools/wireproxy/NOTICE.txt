@@ -1,0 +1,9 @@
+wireproxy v1.1.3 (Windows amd64)
+Source and releases: https://github.com/windtf/wireproxy/releases/tag/v1.1.3
+Source code: https://github.com/windtf/wireproxy/tree/v1.1.3
+License: ISC; see LICENSE.txt in this directory.
+Official release archive SHA-256:
+bce041ea9fe0f8a3351301dcbe29cdf6a523bb25cf9c62f17ebb5699a8051d0f
+
+The executable is downloaded and verified by fetch_wireproxy.ps1.
+No user node configuration or private key is included in this directory or the installer.

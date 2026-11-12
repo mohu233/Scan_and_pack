@@ -1,44 +1,48 @@
-# Qt build directories and generated files
+# Qt Creator and local build output
+.qtcreator/
+*.pro.user*
 build/
 debug/
 release/
 *.o
 *.obj
-*.moc
-moc_*.cpp
-ui_*.h
-qrc_*.cpp
-Makefile
-Makefile.*
-*.qm
-*.stash
-
-# Qt Creator user-specific settings
-.qtcreator/
-*.pro.user
-*.pro.user.*
-*.autosave
-
-# Packaged binaries and deployed Qt runtime
-package/app/
-package/*.exe
+*.exe
 *.dll
-*.pdb
+*.a
+*.lib
+Makefile*
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
 
-# Runtime/private data (created under the user's temporary directory)
-token.txt
-fnsku_sku_index.xlsx
-raw_response.txt
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
 
-# Locally generated business files
-装箱单_*.xlsx
-装箱计划*.xlsx
-packing-list_*.xlsx
+# Runtime data and secrets
+profiles/
+modules/
+proxies.json
+ProfilePower.log
+*.log
+.env
+.env.*
+!.env.example
+*.conf
+*.key
+*.pem
+*.pfx
+
+# Packaging output
+package/
+dist/
+*_Setup.exe
+installer.nsi
 
 # OS/editor files
 .DS_Store
 Thumbs.db
-desktop.ini
-.vscode/
 .idea/
-
+.vscode/

@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/branding">
+    <file alias="profilepower.svg">assets/profilepower.svg</file>
+    <file alias="profilepower.png">assets/profilepower.png</file>
+  </qresource>
+  <qresource prefix="/ui">
+    <file alias="chevron.svg">assets/chevron.svg</file>
+    <file alias="check.svg">assets/check.svg</file>
+    <file alias="play.svg">assets/play.svg</file>
+  </qresource>
+</RCC>
