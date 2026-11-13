@@ -7,6 +7,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QApplication::setApplicationVersion(QStringLiteral(SCAN_PACK_VERSION));
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();

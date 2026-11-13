@@ -1,7 +1,8 @@
 QT += widgets network openglwidgets core-private
 
 CONFIG += c++17
-VERSION = 1.0.4
+VERSION = 11.13.14
+DEFINES += SCAN_PACK_VERSION=\\\"$$VERSION\\\"
 win32:LIBS += -lwinmm
 
 # Keep MinGW memory usage low on machines with a small/full system drive.

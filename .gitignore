@@ -22,6 +22,7 @@ Makefile.*
 # Packaged binaries and deployed Qt runtime
 package/app/
 package/*.exe
+*.exe.sha256
 *.dll
 *.pdb
 
@@ -29,6 +30,9 @@ package/*.exe
 token.txt
 fnsku_sku_index.xlsx
 raw_response.txt
+packing_autosave.json
+.env
+.env.*
 
 # Locally generated business files
 装箱单_*.xlsx

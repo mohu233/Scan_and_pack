@@ -1,5 +1,7 @@
 # Scan and Pack
 
+Current version: **11.13.14**.
+
 [简体中文](README.zh-CN.md)
 
 Scan and Pack is a Windows desktop application for warehouse packing operations. It receives 10-character Amazon FNSKU values from a barcode scanner, assigns scanned units to box numbers, compares packed quantities against an imported packing plan, and exports packing records to Excel.
@@ -10,7 +12,12 @@ The interface uses a light industrial dashboard design so operators can quickly 
 
 - Receives 10-character FNSKU scans and clears the input automatically.
 - Requires a box number before accepting a scan.
-- Groups scan history by box and FNSKU, with the latest activity shown first.
+- Provides loose-packing mode and a parallel five-box warehouse mode.
+- The five-box mode has no reference box: create one complete group of five box IDs first (sequential defaults, editable individually or by bulk paste), then each FNSKU is routed to the box position with the lowest real count (normally 1→2→3→4→5).
+- Shows the destination position and box ID prominently after each scan, and validates that all five boxes contain identical SKU quantities before a group is completed.
+- Provides a confirmed “Clear current packing data” action that resets scans, box IDs, and warehouse groups while preserving the packing plan and product index.
+- Displays warehouse history as five-box groups, including empty boxes, per-box counts, group totals and collapsible item details. Completed groups collapse and lock; loose mode retains box/FNSKU history.
+- Creates groups atomically after validating all five IDs, blocks a new group until the active group is completed, and preserves slot mappings when completing partial groups from older sessions.
 - Shows large, high-contrast quantities and supports removing one scanned unit.
 - Imports an Excel packing plan containing `SKU` and `Quantity`.
 - Resolves both SKU and MSKU aliases to the same FNSKU. This handles names that differ only because one system replaces spaces with underscores.
@@ -32,7 +39,8 @@ Runtime data is stored in the current user's temporary directory:
 ```text
 %TEMP%\扫码入库\
 ├── token.txt
-└── fnsku_sku_index.xlsx
+├── fnsku_sku_index.xlsx
+└── packing_autosave.json
 ```
 
 Both files are created automatically when missing. Paste only the Lingxing ERP `auth-token` value into `token.txt`. Never commit tokens or private index data to Git.
@@ -86,6 +94,7 @@ Compiled applications, Qt runtime files, build directories, and installer execut
 Scan_and_pack/
 ├── assets/                Offline audio resources
 ├── package/installer.nsi  NSIS installer definition
+├── tests/                 Five-box routing smoke test
 ├── main.cpp               Application entry point
 ├── mainwindow.cpp         Business logic and UI behavior
 ├── mainwindow.h           Main window declarations
